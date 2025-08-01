@@ -1,3 +1,8 @@
+import os
+# --- KEY FIX: Set the cache directory BEFORE importing transformers ---
+# This tells the library to use a writable directory inside the project.
+os.environ['TRANSFORMERS_CACHE'] = '/code/cache'
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 import torch
